@@ -38,13 +38,17 @@ $db = [
             <div class="teachers">
                 <?php
                 foreach ($db as $element) {
-                    foreach ($element as $teachers) {
-                        foreach ($teachers as $contact) {
-                            echo $contact;
-                        }
-                    }
-                }
-                ?>
+                    foreach ($element as $teachers) { ?>
+
+                        <?php foreach ($teachers as $contact) { ?>
+
+                            <li>
+                                <?php echo $contact; ?>
+                            </li>
+                        <?php } ?>
+
+                <?php }
+                } ?>
             </div>
             <div class="pm">
                 <?php
