@@ -1,5 +1,11 @@
 <?php
 
+if (isset($_GET["name"])) {
+    if ()
+    echo 'funziona';
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +23,7 @@
             <input type="text" name="name" placeholder="Inserisci il nome">
             <input type="email" name="email" placeholder="Inserisci la tua mail">
             <input type="number" name="age" placeholder="Inserisci la tua età">
+            <button>Entra</button>
         </form>
     </main>
 </body>
