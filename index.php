@@ -1,8 +1,14 @@
 <?php
 
 if (isset($_GET["name"])) {
-    if ()
-    echo 'funziona';
+
+    $name = $_GET["name"];
+
+    if (strlen($name) > 3) {
+        echo 'Accesso riuscito';
+    } else {
+        echo 'Accesso negato';
+    }
 }
 
 
