@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_GET["name"]) || isset($_GET["email"]) && isset($_GET["age"])) {
+if (isset($_GET["name"]) && isset($_GET["email"]) && isset($_GET["age"])) {
 
     $name = $_GET["name"];
     $email = $_GET["email"];
@@ -10,6 +10,8 @@ if (isset($_GET["name"]) || isset($_GET["email"]) && isset($_GET["age"])) {
     } else {
         echo 'Accesso negato';
     }
+} else {
+    echo 'Accesso negatissimo';
 }
 
 ?>
