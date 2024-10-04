@@ -6,6 +6,11 @@ $bestStudents = [];
 $bestStudentsInClass = [];
 $bestStudentsInClasses = [];
 
+$pickedProgrammingLanguagesSingleStudent = [];
+$pickedProgrammingLanguagesSingleClass = [];
+$pickedProgrammingLanguages = [];
+
+
 // foreach ($classi as $classElementsValue) {
 //     foreach ($classElementsValue as $classMember) {
 //         if ($classMember['voto_medio'] >= 6) {
@@ -33,7 +38,26 @@ if (isset($_GET['maxVote'])) {
     array_push($bestStudentsInClass, $bestStudents);
     array_push($bestStudentsInClasses, $bestStudents);
 
-    $classi = $bestStudentsInClasses;
+    if (count($bestStudentsInClasses) > 1) {
+        $classi = $bestStudentsInClasses;
+    }
+}
+
+
+// ! Filtro per linguaggio di programmazione preferito.
+if (isset($_GET['programmingLanguage'])) {
+    foreach ($classi as $classElementsValue) {
+        foreach ($classElementsValue as $classMember) {
+            if (str_contains($classMember['linguaggio_preferito'], $_GET['programmingLanguage'])) {
+                array_push($pickedProgrammingLanguagesSingleStudent, $classMember);
+            }
+        }
+    }
+
+    array_push($pickedProgrammingLanguagesSingleClass, $pickedProgrammingLanguagesSingleStudent);
+    array_push($pickedProgrammingLanguages, $pickedProgrammingLanguagesSingleStudent);
+
+    $classi = $pickedProgrammingLanguages;
 }
 
 ?>
@@ -63,6 +87,9 @@ if (isset($_GET['maxVote'])) {
         <form action="" method="GET">
             <label for="maxVote">Cerca per voto massimo</label>
             <input type="number" min=0 max=10 name="maxVote">
+            <br>
+            <label for="programmingLanguage">Cerca per linguaggio di programmazione preferito</label>
+            <input type="text" name="programmingLanguage">
             <button>Filtra</button>
         </form>
 
