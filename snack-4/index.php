@@ -7,18 +7,18 @@ $bestStudentsInClasses = [];
 
 
 // Filtriamo esclusivamente gli studenti con media superiore a 6.
-foreach ($classi as $classElementsValue) {
-    foreach ($classElementsValue as $classMember) {
-        if ($classMember['voto_medio'] >= 6) {
-            array_push($bestStudents, $classMember);
-        }
-    }
-}
+// foreach ($classi as $classElementsValue) {
+//     foreach ($classElementsValue as $classMember) {
+//         if ($classMember['voto_medio'] >= 6) {
+//             array_push($bestStudents, $classMember);
+//         }
+//     }
+// }
 
-array_push($bestStudentsInClass, $bestStudents);
-array_push($bestStudentsInClasses, $bestStudents);
+// array_push($bestStudentsInClass, $bestStudents);
+// array_push($bestStudentsInClasses, $bestStudents);
 
-$classi = $bestStudentsInClasses;
+// $classi = $bestStudentsInClasses;
 
 ?>
 
@@ -39,29 +39,34 @@ $classi = $bestStudentsInClasses;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <main>
         <div class="classe">
             <?php foreach ($classi as $className => $classElementsValue) { ?>
-                <h3><?= $className; ?></h3>
-                <ul>
-                    <?php foreach ($classElementsValue as $classMember) {  ?>
+            <h2><?= $className; ?></h2>
+            <ul>
+                <?php foreach ($classElementsValue as $classMember) {  ?>
+                <li class="student-number">
+                    <h4>Studente: <?= $classMember['id'] ?></h4>
+                    <ul>
+                        <?php foreach ($classMember as $classElementKey => $classElementValue) { ?>
                         <li>
-                            <?= $classMember['id'] ?>
-                            <ul>
-                                <?php foreach ($classMember as $classElementKey => $classElementValue) { ?>
-                                    <li>
-                                        <?php
-                                        echo $classElementValue;
+                            <?php $classElementKeyUpperCase = ucfirst($classElementKey);
+                                        $classElementKeyComplete = str_replace('_', ' ', $classElementKeyUpperCase);
+                                        echo "{$classElementKeyComplete}: {$classElementValue}";
                                         ?>
-                                    </li>
-                                <?php } ?>
-                            </ul>
                         </li>
-                    <?php } ?>
-                </ul>
+                        <?php } ?>
+                    </ul>
+                </li>
+                <?php } ?>
+            </ul>
+            <hr>
             <?php } ?>
         </div>
     </main>
