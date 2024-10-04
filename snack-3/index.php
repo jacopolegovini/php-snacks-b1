@@ -39,22 +39,20 @@ $db = [
                 <?php
                 foreach ($db as $element) {
                     foreach ($element as $teachers) { ?>
+                        <li>
+                            <?php foreach ($teachers as $contact) {
 
-                        <?php foreach ($teachers as $contact) { ?>
-
-                            <li>
-                                <?php echo $contact; ?>
-                            </li>
-                        <?php } ?>
-
+                                echo $contact . ' ';
+                            } ?>
+                        </li>
                 <?php }
                 } ?>
             </div>
             <div class="pm">
                 <?php
                 foreach ($db as $element) {
-                    foreach ($element as $teachers) {
-                        foreach ($teachers as $contact) {
+                    foreach ($element as $pm) {
+                        foreach ($pm as $contact) {
                             echo $contact;
                         }
                     }
