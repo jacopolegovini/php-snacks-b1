@@ -39,13 +39,23 @@ $db = [
                 <?php
                 foreach ($db as $element) {
                     foreach ($element as $teachers) {
-                        var_dump($teachers);
+                        foreach ($teachers as $contact) {
+                            echo $contact;
+                        }
                     }
                 }
                 ?>
             </div>
             <div class="pm">
-                <?php ?>
+                <?php
+                foreach ($db as $element) {
+                    foreach ($element as $teachers) {
+                        foreach ($teachers as $contact) {
+                            echo $contact;
+                        }
+                    }
+                }
+                ?>
             </div>
         </div>
     </main>
