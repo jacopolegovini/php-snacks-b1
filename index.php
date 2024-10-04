@@ -3,8 +3,9 @@
 if (isset($_GET["name"]) || isset($_GET["email"]) && isset($_GET["age"])) {
 
     $name = $_GET["name"];
+    $email = $_GET["email"];
 
-    if (strlen($name) > 3 && str_contains($_GET["email"], '.')) {
+    if (strlen($name) > 3 && str_contains($email, '.')) {
         echo 'Accesso riuscito';
     } else {
         echo 'Accesso negato';
@@ -26,7 +27,7 @@ if (isset($_GET["name"]) || isset($_GET["email"]) && isset($_GET["age"])) {
     <main>
         <form action="" method="GET">
             <input type="text" name="name" placeholder="Inserisci il nome">
-            <input type="email" name="email" placeholder="Inserisci la tua mail">
+            <input type="email" name="email" placeholder="Inserisci la tua email">
             <input type="number" name="age" placeholder="Inserisci la tua età">
             <button>Entra</button>
         </form>
