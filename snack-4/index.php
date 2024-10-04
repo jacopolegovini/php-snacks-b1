@@ -1,6 +1,25 @@
 <?php
 include "./data.php";
 
+$bestStudents = [];
+$bestStudentsInClass = [];
+$bestStudentsInClasses = [];
+
+
+// Filtriamo esclusivamente gli studenti con media superiore a 6.
+foreach ($classi as $classElementsValue) {
+    foreach ($classElementsValue as $classMember) {
+        if ($classMember['voto_medio'] >= 6) {
+            array_push($bestStudents, $classMember);
+        }
+    }
+}
+
+array_push($bestStudentsInClass, $bestStudents);
+array_push($bestStudentsInClasses, $bestStudents);
+
+$classi = $bestStudentsInClasses;
+
 ?>
 
 <!-- Classe 1A" => [
