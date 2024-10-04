@@ -1,6 +1,4 @@
 <?php
-// include __DIR__ . "./data.php";
-
 $classi = [
     "Classe 1A" => [
         [
@@ -241,16 +239,6 @@ $classi = [
 
 ?>
 
-<!-- Classe 1A" => [
-        [
-            "id" => 1,
-            "nome" => "Marco",
-            "cognome" => "Rossi",
-            "anni" => 23,
-            "voto_medio" => 8.5,
-            "linguaggio_preferito" => "PHP",
-            "immagine" => "https://source.unsplash.com/random/200x200?person", -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -261,7 +249,7 @@ $classi = [
 </head>
 
 <body>
-    <?php var_dump($classi); ?>
+
 </body>
 
 </html>
