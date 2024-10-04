@@ -38,7 +38,7 @@ if (isset($_GET['maxVote'])) {
     array_push($bestStudentsInClass, $bestStudents);
     array_push($bestStudentsInClasses, $bestStudents);
 
-    if (count($bestStudentsInClasses) > 1) {
+    if (count($bestStudents) > 1) {
         $classi = $bestStudentsInClasses;
     }
 }
