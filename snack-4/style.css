@@ -9,3 +9,8 @@ ul {
 .student-number {
     padding-top: 10px;
 }
+
+.classe {
+    display: flex;
+    flex-wrap: wrap;
+}
