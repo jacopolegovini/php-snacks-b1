@@ -41,7 +41,6 @@ $db = [
                     foreach ($element as $teachers) { ?>
                         <li>
                             <?php foreach ($teachers as $contact) {
-
                                 echo $contact . ' ';
                             } ?>
                         </li>
@@ -51,13 +50,14 @@ $db = [
             <div class="pm">
                 <?php
                 foreach ($db as $element) {
-                    foreach ($element as $pm) {
-                        foreach ($pm as $contact) {
-                            echo $contact;
-                        }
-                    }
-                }
-                ?>
+                    foreach ($element as $teachers) { ?>
+                        <li>
+                            <?php foreach ($teachers as $contact) {
+                                echo $contact . ' ';
+                            } ?>
+                        </li>
+                <?php }
+                } ?>
             </div>
         </div>
     </main>
