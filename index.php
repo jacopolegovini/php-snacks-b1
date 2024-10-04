@@ -1,16 +1,15 @@
 <?php
 
-if (isset($_GET["name"])) {
+if (isset($_GET["name"]) || isset($_GET["email"]) && isset($_GET["age"])) {
 
     $name = $_GET["name"];
 
-    if (strlen($name) > 3) {
+    if (strlen($name) > 3 && str_contains($_GET["email"], '.')) {
         echo 'Accesso riuscito';
     } else {
         echo 'Accesso negato';
     }
 }
-
 
 ?>
 
