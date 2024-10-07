@@ -1,5 +1,5 @@
 <?php
 function checkPalindrome($word)
 {
-    echo $word;
+    $lengthWord = strlen($word);
 }
