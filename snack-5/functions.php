@@ -1,2 +1,5 @@
 <?php
-function checkPalindrome($word) {}
+function checkPalindrome($word)
+{
+    echo $word;
+}

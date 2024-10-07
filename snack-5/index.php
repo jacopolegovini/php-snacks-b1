@@ -1,5 +1,5 @@
 <?php
-include "./fucntions.php";
+include "./functions.php";
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ include "./fucntions.php";
     <form action="" method="GET">
         <input type="text" name="palindrome">
     </form>
-    <?= 'test' ?>
+    <?= checkPalindrome($_GET['palindrome']) ?>
 </body>
 
 </html>
